@@ -1,0 +1,7 @@
+name             'lemp'
+maintainer       'YOUR_NAME'
+maintainer_email 'YOUR_EMAIL'
+license          'All rights reserved'
+description      'Installs/Configures lemp'
+long_description 'Installs/Configures lemp'
+version          '0.1.0'
