@@ -30,3 +30,9 @@ end
 nginx_site 'default' do
   enable true
 end
+
+template "#{node['nginx']['default_root']}/index.html" do
+  source 'index.html.erb'
+  owner node['nginx']['group']
+  user node['nginx']['user']
+end

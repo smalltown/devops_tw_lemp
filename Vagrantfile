@@ -30,17 +30,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
   config.vm.network "private_network", ip: "192.168.110.10"
-  #config.vm.network :forwarded_port, guest: 2222, host: 1234, id: "ssh"
+  config.vm.network :forwarded_port, guest: 2222, host: 6666, id: "ssh"
+  config.ssh.guest_port = "6666"
 
 
   # Enabling the Berkshelf plugin. To enable this globally, add this configuration
   # option to your ~/.vagrant.d/Vagrantfile file
   config.berkshelf.enabled = true
 
-  #config.vm.provision :chef_solo do |chef|
+  config.vm.synced_folder "./etc_chef", "/etc/chef", owner: "root", group: "root"
 
-  #  chef.run_list = [
-  #    'recipe[lemp::default]'
-  #  ]
-  #end
 end
